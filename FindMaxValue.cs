@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-        public class FindMaxValue<T> where T : IComparable
+           public class FindMaxValue<T> where T : IComparable
     {
-        /* UC- 4 Implemented
-         * taking more then 3 parameters as in Array
-         * Sorting Array to get max Value
+        /* UC- 5 Implemented
+         * Using Generic Method to get Max Value.
          */
         //Instance Variables
         public T[] value;
@@ -32,13 +31,15 @@ namespace Generics
             var s = sortedValues.Length - 1;
             return sortedValues[s];
         }
-        // Method to display Max Value
-        public void PrintMaxValue()
+        //Using Generic Method to get Max value
+        public T PrintMaxValue()
         {
-            Console.WriteLine("Max Value is: " + MaxValue(this.value));
+            T max = MaxValue(this.value);
+            return max;
         }
     }
 }
-     
+
+      
    
      
