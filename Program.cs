@@ -11,9 +11,9 @@ namespace Generics
         static void Main(string[] args)
         {
               //Array
-            int[] intArr = { 20, 80, 10, 50 };
-            double[] doubleArr = { 40.5, 60.6, 35.79, 78.8 };
-            string[] stringArr = { "VikasBenki ", "ManojBenki", "KarthikBenki" };
+            int[] intArr = { 10, 60, 50, 40 };
+            double[] doubleArr = { 40.8, 64.3, 39.79, 78.8 };
+            string[] stringArr = { "Rajiv", "Raj", "Rahul" };
 
             /* Creating object of FindMaxValue Class passing array to the Constructor       
              * Calling PrintMaxValue Method to get Max value.
