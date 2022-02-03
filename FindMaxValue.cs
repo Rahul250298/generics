@@ -6,41 +6,30 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    public class FindMaxValue<T> where T : IComparable
+     public class FindMaxValue<T> where T : IComparable
     {
-        /* Using Generic Class, Method and Constructor to get Max value
+        /* Using Generic Class and Method to get Max value
          * extending IComparable so that that we can use CompareTo method
          */
-        //Instance Variables
-        public T first, second, third;
-
-        //Constructor to initialize data
-        public FindMaxValue(T first, T second, T third)
-        {
-            this.first = first;
-            this.second = second;
-            this.third = third;
-        }
-        //Generic Method
-        public static T FindMax(T fisrt, T second, T third)
+        public T FindMax(T fisrtNum, T secondNum, T thirdNum)
         {
             //check condition for max number using CompareTo method.
-            if (fisrt.CompareTo(second) > 0 && fisrt.CompareTo(third) > 0)
+            if (fisrtNum.CompareTo(secondNum) > 0 && fisrtNum.CompareTo(thirdNum) > 0)
             {
-                Console.WriteLine("Max number is First Number: " + fisrt);
-                return fisrt;
+                Console.WriteLine("Max number is First Number: " + fisrtNum);
+                return fisrtNum;
             }
 
-            if (second.CompareTo(fisrt) > 0 && second.CompareTo(third) > 0)
+            if (secondNum.CompareTo(fisrtNum) > 0 && secondNum.CompareTo(thirdNum) > 0)
             {
-                Console.WriteLine("Max number is Second Number: " + second);
-                return second;
+                Console.WriteLine("Max number is Second Number: " + secondNum);
+                return secondNum;
             }
 
-            if (third.CompareTo(fisrt) > 0 && third.CompareTo(second) > 0)
+            if (thirdNum.CompareTo(fisrtNum) > 0 && thirdNum.CompareTo(secondNum) > 0)
             {
-                Console.WriteLine("Max number is Third Number: " + third);
-                return third;
+                Console.WriteLine("Max number is Third Number: " + thirdNum);
+                return thirdNum;
             }
             else
             {
@@ -48,11 +37,7 @@ namespace Generics
                 return default;
             }
         }
-        //Display Method to Display data.
-        public void Display()
-        {
-            Console.WriteLine("Max Value is: " + FindMax(first, second, third));
-        }
     }
 }
+  
 
