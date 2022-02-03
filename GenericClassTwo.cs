@@ -8,6 +8,12 @@ namespace Generics
 {
       internal class GenericsClassTwo<T,E>
     {
+    
+    /* In this Generic Class
+     * using 2 Types place holder
+     * T and E
+     * place Holder name can be AnyThing.
+     */
         public T[] array;
 
         /// <summary>
