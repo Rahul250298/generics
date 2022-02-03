@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-     /* In this Generic Class
-     * using 2 Types place holder
-     * T and E
-     * place Holder name can be AnyThing.
-     */
-    internal class GenericClassTwo<T, E>
+      internal class GenericsClassTwo<T,E>
     {
         public T[] array;
 
@@ -19,7 +14,7 @@ namespace Generics
         /// Initializes a new instance of the <see cref="GenericClass{T}"/> class.
         /// </summary>
         /// <param name="array">The array.</param>
-        public GenericClassTwo(T[] array)
+        public GenericsClassTwo(T[] array)
         {
             this.array = array;
         }
@@ -36,5 +31,6 @@ namespace Generics
         }
     }
 }
+   
   
   
