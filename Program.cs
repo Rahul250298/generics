@@ -10,20 +10,15 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-              //Instanse variables.
-            int first = 20, second = 300, third = 40;
-            double f = 40.5, s = 60.6, t = 35.79;
-            string firstName = "saurav", secondName = "gourav", thirdName = "Ankit";
+              Console.WriteLine("hello welcome to Generics problem");
 
-            /* Creating object of FindMaxValue Class passing argument for the Constructor       
-             * and calling Display method
-             */
-            new FindMaxValue<int>(first, second, third).Display();
-            new FindMaxValue<double>(f, s, t).Display();
-            new FindMaxValue<string>(firstName, secondName, thirdName).Display();
-            Console.ReadLine();
-            
-               
+            //Instanse variables.
+            int first = 20, second = 300, third = 40;
+
+            //Creating object of FindMaxValueClass.
+            FindMaxValue findMaxValue = new FindMaxValue();
+            Console.WriteLine("Max number is:{0} out of numbers : {1} , {2} , {3}", findMaxValue.FindMaxInteger(first, second, third), first, second, third);
+            Console.ReadLine();               
         }
     }
 }
