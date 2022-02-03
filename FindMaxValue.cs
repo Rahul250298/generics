@@ -6,94 +6,39 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-        internal class FindMaxValue
-    { 
-        /*Method to check Max number out of Three number for Int data type vales.
-         *If any two or all numbers are same then return zero.
+        public class FindMaxValue<T> where T : IComparable
+    {
+        /* UC- 4 Implemented
+         * taking more then 3 parameters as in Array
+         * Sorting Array to get max Value
          */
-        public int FindMaxInteger(int fisrtNum, int secondNum, int thirdNum)
+        //Instance Variables
+        public T[] value;
+        //Constructor
+        public FindMaxValue(T[] value)
         {
-            //check condition for max number using CompareTo method.
-            if (fisrtNum.CompareTo(secondNum) > 0 && fisrtNum.CompareTo(thirdNum) > 0)
-            {
-                Console.WriteLine("Max number is First Number: " + fisrtNum);
-                return fisrtNum;
-            }
-
-            if (secondNum.CompareTo(fisrtNum) > 0 && secondNum.CompareTo(thirdNum) > 0)
-            {
-                Console.WriteLine("Max number is Second Number: " + secondNum);
-                return secondNum;
-            }
-
-            if (thirdNum.CompareTo(fisrtNum) > 0 && thirdNum.CompareTo(secondNum) > 0)
-            {
-                Console.WriteLine("Max number is Third Number: " + thirdNum);
-                return thirdNum;
-            }
-            else
-            {
-                Console.WriteLine("two or more numbers are same");
-                return 0;
-            }
+            this.value = value;
         }
-
-        //Method to check Max number out of Three number for double data type vales.
-        public double FindMaxDouble(double first, double second, double third)
+        //Generic Method to sort Array in asscending order
+        public T[] Sort(T[] values)
         {
-            //check condition for max number using CompareTo method.
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
-            {
-                Console.WriteLine("Max number is First Number: " + first);
-                return first;
-            }
-
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
-            {
-                Console.WriteLine("Max number is Second Number: " + second);
-                return second;
-            }
-
-            if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0)
-            {
-                Console.WriteLine("Max number is Third Number: " + third);
-                return third;
-            }
-            else
-            {
-                Console.WriteLine("two or more numbers are same");
-                return 0;
-            }
+            Array.Sort(values);
+            return values;
         }
-
-        //Method to check Max value out of Three values for String data type vales.
-        public string FindMaxString(string first, string second, string third)
+        //Method to get Max value After Sorting.
+        public T MaxValue(params T[] values)
         {
-            //check condition for max value using CompareTo method.
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
-            {
-                Console.WriteLine("Max Value is First Value: " + first);
-                return first;
-            }
-
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
-            {
-                Console.WriteLine("Max Value is Second Value: " + second);
-                return second;
-            }
-
-            if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0)
-            {
-                Console.WriteLine("Max Value is Third Value: " + third);
-                return third;
-            }
-            else
-            {
-                Console.WriteLine("two or more numbers are same");
-                return "null";
-            }
+            var sortedValues = Sort(values);
+            var s = sortedValues.Length - 1;
+            return sortedValues[s];
+        }
+        // Method to display Max Value
+        public void PrintMaxValue()
+        {
+            Console.WriteLine("Max Value is: " + MaxValue(this.value));
         }
     }
 }
+     
    
      
